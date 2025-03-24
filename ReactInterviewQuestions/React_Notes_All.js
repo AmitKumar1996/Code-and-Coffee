@@ -41,20 +41,24 @@
 // Break your UI into reusable components.
 
 // Functional Component Example
-function Header() {
+function Header()
+{
   return <h1>Welcome to My App</h1>;
 }
 
 // Class Component Example (less common in modern React)
-class Header extends React.Component {
-  render() {
+class Header extends React.Component
+{
+  render()
+  {
     return <h1>Welcome to My App</h1>;
   }
 }
 
 // 3. Using JSX
 // JSX is a syntax extension for JavaScript that allows you to write HTML-like code in React.
-function Greeting() {
+function Greeting()
+{
   return <h1>Hello, World!</h1>;
 }
 
@@ -62,22 +66,25 @@ function Greeting() {
 // Use the useState hook to manage state in functional components.
 import React, { useState } from 'react';
 
-function Counter() {
-  const [count, setCount] = useState(0);
+function Counter()
+{
+  const [ count, setCount ] = useState( 0 );
 
   return (
     <div>
       <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount( count + 1 )}>Increment</button>
     </div>
   );
 }
 
 // 5. Handling Events
 // Use camelCase for event handlers (e.g., onClick, onChange).
-function Button() {
-  const handleClick = () => {
-    alert('Button clicked!');
+function Button()
+{
+  const handleClick = () =>
+  {
+    alert( 'Button clicked!' );
   };
 
   return <button onClick={handleClick}>Click Me</button>;
@@ -85,11 +92,13 @@ function Button() {
 
 // 6. Working with Props
 // Props are used to pass data from a parent component to a child component.
-function Greeting(props) {
+function Greeting( props )
+{
   return <h1>Hello, {props.name}!</h1>;
 }
 
-function App() {
+function App()
+{
   return <Greeting name="Amit" />;
 }
 
@@ -97,20 +106,22 @@ function App() {
 // Hooks allow functional components to use state and lifecycle features.
 import React, { useState, useEffect } from 'react';
 
-function DataFetcher() {
-  const [data, setData] = useState([]);
+function DataFetcher()
+{
+  const [ data, setData ] = useState( [] );
 
-  useEffect(() => {
-    fetch('https://api.example.com/data')
-      .then((response) => response.json())
-      .then((data) => setData(data));
-  }, []);
+  useEffect( () =>
+  {
+    fetch( 'https://api.example.com/data' )
+      .then( ( response ) => response.json() )
+      .then( ( data ) => setData( data ) );
+  }, [] );
 
   return (
     <ul>
-      {data.map((item) => (
+      {data.map( ( item ) => (
         <li key={item.id}>{item.name}</li>
-      ))}
+      ) )}
     </ul>
   );
 }
@@ -121,7 +132,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 
-function App() {
+function App()
+{
   return (
     <Router>
       <Routes>
@@ -137,7 +149,8 @@ function App() {
 // Example of CSS Modules:
 import styles from './MyComponent.module.css';
 
-function MyComponent() {
+function MyComponent()
+{
   return <div className={styles.myClass}>Hello, World!</div>;
 }
 
@@ -148,7 +161,8 @@ import React, { createContext, useContext } from 'react';
 
 const ThemeContext = createContext();
 
-function App() {
+function App()
+{
   return (
     <ThemeContext.Provider value="dark">
       <Toolbar />
@@ -156,8 +170,9 @@ function App() {
   );
 }
 
-function Toolbar() {
-  const theme = useContext(ThemeContext);
+function Toolbar()
+{
+  const theme = useContext( ThemeContext );
   return <div>Current Theme: {theme}</div>;
 }
 
