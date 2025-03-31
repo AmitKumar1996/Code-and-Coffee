@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './components/Home'
 import Login from './components/Login'
 import About from './components/About'
+import User from './components/User'
 
 function App()
 {
@@ -33,6 +34,15 @@ function App()
         <>
           <Navbar />
           <About />
+        </>
+      ),
+    },
+    {
+      path: "/user/:username",
+      element: (
+        <>
+          <Navbar />
+          <User />
         </>
       ),
     },
